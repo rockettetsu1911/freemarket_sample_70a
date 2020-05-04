@@ -90,7 +90,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null:false,unique:true|       
-|name|string|null:false|
+|name|string|null:false、unique :true|
 
 
 ### Asociation
@@ -100,8 +100,8 @@ has_many: :items
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null:false, unique:true|
-|item_id|references |null: false, foreign_key: true|
-|tag_id|references |null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
+|tag_id|references|null: false, foreign_key: true|
 
 ### Asociation
 - belongs_to :item
@@ -110,8 +110,8 @@ has_many: :items
 ## tagsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer  |null:false,unique:true|
-|name|string   |null:false|
+|id|integer|null:false,unique:true|
+|name|string|null:false,unique:true||
 
 ### Asociation
 - has_many :items , through: :item_tag
