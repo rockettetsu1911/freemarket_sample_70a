@@ -1,13 +1,3 @@
-## groups_usersテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :group
-- belongs_to :user
 
 ## usersテーブル
 
@@ -15,7 +5,7 @@
 |------|----|-------|
 |id|integer|null:false,unique:true|  
 |password|string|null:false|
-|email|string|null:false, unique:true|　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+|email|string|null:false, unique:true|
 |first_name|string|null:false|
 |last_name|string|null:false|
 |reading_first_name|string|null:false|
@@ -32,9 +22,8 @@
 |address1|string|null:false|
 |address2|string|null:false|
 |building|string|
-|telephone|string||null:false, unique:true|
-|token_id|integer|
-|password|string|null:false|
+|telephone|string|
+|token_id|string|
 
 ### Association
 - has_many :comments
@@ -68,7 +57,6 @@
 |------|----|-------|
 |id|integer|null:false,unique:true|
 |text|text|null:false|
-|created_at|datetime|null:false|
 |item_id|references |null: false, foreign_key:true|
 |user_id|references |null: false, foreign_key:true|
 
