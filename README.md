@@ -1,24 +1,131 @@
-# README
+## groups_usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
-Things you may want to cover:
+### Association
+- belongs_to :group
+- belongs_to :user
 
-* Ruby version
+## usersテーブル
 
-* System dependencies
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null:false,unique:true|  
+|password|string|null:false|
+|email|string|null:false, unique:true|　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+|first_name|string|null:false|
+|last_name|string|null:false|
+|reading_first_name|string|null:false|
+|reading_last_name|string|null:false|
+|nickname|string|null:false ,unique:true|
+|introduction|text|null:false|
+|birthday|string|null:false|
+|dest_first_name|string|null:false|
+|dest_last_name|string|null:false|
+|reading_dest_first_name|string|null:false|
+|reading_dest_last_name|strijng|null:false|
+|zip_code|integer|null:false|
+|prefecture|string|null:false|
+|address1|string|null:false|
+|address2|string|null:false|
+|building|string|
+|telephone|string||null:false, unique:true|
+|token_id|integer|
+|password|string|null:false|
 
-* Configuration
+### Association
+- has_many :comments
+- has_many :items
+- has_many :likes
 
-* Database creation
+## itemsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null:false,unique:true|
+|name|string|null:false,index:true| 
+|price|integer|null:false|
+|condition|select|null:false| 
+|explanation|text|null:false,index:true| 
+|view|integer|integer|null:false|
+|user_id|references |null: false, foreign_key:true|
+|buyer|user_id|
+|bought_at|datetime|null:false|  
+|category_id|references|null: false, foreign_key: true|
 
-* Database initialization
+### Association
+- belongs_to :user
+- has_many :tags ,through: :item_tags
+- belongs_to :category
+- has_many :comments
+- has_many :pictures
+- has_many :likes
 
-* How to run the test suite
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null:false,unique:true|
+|text|text|null:false|
+|created_at|datetime|null:false|
+|item_id|references |null: false, foreign_key:true|
+|user_id|references |null: false, foreign_key:true|
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
+- belongs_to :user
+- belongs_to :item
 
-* Deployment instructions
+## likesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer    |null:false,unique:true|
+|user_id|references|null:false, foreign_key:true|
+|item_id|references|null:false, foreign_key:true|
 
-* ...
+### Asociation
+- belongs_to :user
+- belongs_to :item
+
+
+## picturesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null:false, unique:true|   
+|image|string|null:false|
+|item_id|references|null:false, foreign_key:true|
+
+### Asociation
+- belongs_to :item
+
+## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null:false,unique:true|       
+|name|string|null:false|
+
+
+### Asociation
+has_many: :items
+
+## items_tagsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null:false, unique:true|
+|item_id|references |null: false, foreign_key: true|
+|tag_id|references |null: false, foreign_key: true|
+
+### Asociation
+- belongs_to :item
+- belongs_to :tag
+
+## tagsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer  |null:false,unique:true|
+|name|string   |null:false|
+
+### Asociation
+- has_many :items , through: :item_tag
+
+
