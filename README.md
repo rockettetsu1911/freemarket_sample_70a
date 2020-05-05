@@ -27,8 +27,8 @@
 
 ### Association
 - has_many :comments
-- has_many :items
-- has_many :likes
+- has_many :items, dependent: :destroy
+- has_many :likes, dependent: :destroy
 
 ## itemsテーブル
 |Column|Type|Options|
@@ -46,11 +46,11 @@
 
 ### Association
 - belongs_to :user
-- has_many :tags ,through: :item_tags
+- has_many :tags ,through: :item_tags, dependent: :destroy
 - belongs_to :category
-- has_many :comments
-- has_many :pictures
-- has_many :likes
+- has_many :comments, dependent: :destroy
+- has_many :pictures, dependent: :destroy
+- has_many :likes, dependent: :destroy
 
 ## commentsテーブル
 |Column|Type|Options|
