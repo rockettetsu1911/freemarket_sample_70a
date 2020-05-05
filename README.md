@@ -8,27 +8,38 @@
 |email|string|null:false, unique:true|
 |first_name|string|null:false|
 |last_name|string|null:false|
-|reading_first_name|string|null:false|
-|reading_last_name|string|null:false|
+|first_name_kana|string|null:false|
+|last_name_kana|string|null:false|
 |nickname|string|null:false ,unique:true|
 |introduction|text|null:false|
 |birthday|string|null:false|
 |dest_first_name|string|null:false|
 |dest_last_name|string|null:false|
-|reading_dest_first_name|string|null:false|
-|reading_dest_last_name|strijng|null:false|
-|zip_code|integer|null:false|
-|prefecture|string|null:false|
-|address1|string|null:false|
-|address2|string|null:false|
-|building|string|
+|dest_first_name_kana|string|null:false|
+|dest_last_name_kana|strijng|null:false|
 |telephone|string|
 |token_id|string|
 
 ### Association
+- has_many :address
 - has_many :comments
 - has_many :items, dependent: :destroy
 - has_many :likes, dependent: :destroy
+
+## addressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null:false, unique:true|
+|zip_code|integer|null:false|
+|prefecture|string|null:false|
+|house_number|string|null:false|
+|building|string|
+|user_id|references|null:false, unique:true|
+
+### Asociation
+- belongs_to :user
+
+
 
 ## itemsテーブル
 |Column|Type|Options|
