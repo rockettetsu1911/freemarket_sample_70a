@@ -21,7 +21,7 @@
 |token_id|string|
 
 ### Association
-- has_many :address
+- has_many :address ,dependent: :destroy
 - has_many :comments
 - has_many :items, dependent: :destroy
 - has_many :likes, dependent: :destroy
