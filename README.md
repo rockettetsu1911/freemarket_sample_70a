@@ -13,26 +13,27 @@
 |nickname|string|null:false ,unique:true|
 |introduction|text|null:false|
 |birthday|string|null:false|
-|dest_first_name|string|null:false|
-|dest_last_name|string|null:false|
-|dest_first_name_kana|string|null:false|
-|dest_last_name_kana|strijng|null:false|
-|telephone|string|
+|telephone|string|null:false|
 |token_id|string|
 
 ### Association
-- has_many :address ,dependent: :destroy
+- has_many :addresses ,dependent: :destroy
 - has_many :comments
 - has_many :items, dependent: :destroy
 - has_many :likes, dependent: :destroy
 
-## addressテーブル
+## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null:false, unique:true|
+|dest_first_name|string|null:false|
+|dest_last_name|string|null:false|
+|dest_first_name_kana|string|null:false|
+|dest_last_name_kana|strijng|null:false|
 |zip_code|integer|null:false|
 |prefecture|string|null:false|
-|house_number|string|null:false|
+|city|string|null:false|
+|block_number|string|null:false|
 |building|string|
 |user_id|references|null:false, unique:true|
 
