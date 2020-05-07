@@ -84,12 +84,12 @@ header {
         h1 {
           line-height: 1.2;
           margin-bottom: 24px;
-          @include bg_text-shadow($size:5px);
+          @include bg_text-shadow($size:1px);
         }
         p {
           line-height: 1.75;
           margin-bottom: 20px;
-          @include bg_text-shadow($size:1px);
+          @include bg_text-shadow($size:0.5px);
         }
       }
       &__dlBannar {
@@ -102,43 +102,63 @@ header {
   * TOP REASON
   ********************/
   .topReason {
-    padding: 60px 0;
+    padding: 60px 20px;
 
     &__title {
       text-align: center;
+      margin-bottom: 18px;
 
       &:after {
         @include title-underline;
       }
     }
 
-    &__contents {
+    &__lists {
+      max-width: 1020px;
+      width: 100%;
+      margin: 0 auto;
       display: flex;
-      justify-content: center;
-      padding-left: 20px;
 
       li {
         display: flex;
-        position: relative;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+        margin-right: 5%;
         
-        span {
-          position: absolute;
-          top: 10px;
-          padding: 10px 20px;
-          font-size: 30px;
-          color: #fff;
-          background-color: $icon_bg-color;
+        .list {
+  
+          &__box {
+            display: flex;
+            position: relative;
+            
+            img {
+              width: 100%;
+              // object-fit: cover;
+            }
+            span {
+              position: absolute;
+              padding: 10px 20px;
+              font-size: 30px;
+              line-height: 35px;
+              color: #fff;
+              background-color: $icon_bg-color;
+              border-radius: 4%;
+            }
+          }
+          &__text {
+            margin-top: 20px;
+          }
+          h3 {
+            line-height: 2;
+          }
+          p {
+            line-height: 1.6;
+          }
         }
       }
-
-      &__list {
-        max-width: 306px;
-        margin: 10px 0px;
-        width: calc(100% - 20px);
-
-        h3 {
-          line-height: 50px;
-        }
+      li.last {
+        margin-right: 0;
       }
     }
   }
@@ -164,11 +184,11 @@ header {
         color: $bg_font-color;
         h2 {
           margin-bottom: 20px;
-          @include bg_text-shadow($size:5px);
+          @include bg_text-shadow($size:1px);
         }
         p {
           margin-bottom: 20px;
-          @include bg_text-shadow($size:1px);
+          @include bg_text-shadow($size:0.5px);
         }
       }
       &__dlBannar {
@@ -181,7 +201,7 @@ header {
   * TOP FEATURE
   ********************/
   .topFeature {
-    padding: 60px 60px;
+    padding: 60px 100px;
 
     &__title {
       text-align: center;
@@ -202,6 +222,9 @@ header {
         h3 {
           font-size: 19px;
         }
+        p {
+          font-size: 17px;
+        }
         &--image {
           max-width: 219.33px;
           width: calc(100% - 40px);
@@ -209,7 +232,7 @@ header {
           display: block;
         }
         &--title {
-          margin: 20px 0 10px 0;
+          margin: 38px 0 10px 0;
           text-align: center;
         }
         &--text {
@@ -231,9 +254,6 @@ header {
     &__title {
       text-align: center;
       margin-bottom: 20px;
-      h2 {
-        font-weight: bold;
-      }
     }
 
     &__contents {
@@ -303,11 +323,11 @@ aside {
       h2 {
         font-size: 35px;
         line-height: 1.5;
-        @include bg_text-shadow($size:5px);
+        @include bg_text-shadow($size:1px);
       }
       p {
         font-size: 24px;
-        @include bg_text-shadow($size:1px);
+        @include bg_text-shadow($size:0.5px);
       }
     }
     &__dlBannar {
