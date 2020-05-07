@@ -79,23 +79,21 @@ header {
       margin: 0 auto;
 
       &__about {
-        padding: 200px 60px 0 60px;
+        padding: 180px 60px 0 60px;
         color: $bg_font-color;
         h1 {
-          margin-bottom: 10px;
+          line-height: 1.2;
+          margin-bottom: 24px;
           @include bg_text-shadow($size:5px);
         }
         p {
+          line-height: 1.75;
+          margin-bottom: 20px;
           @include bg_text-shadow($size:1px);
         }
       }
       &__dlBannar {
-        padding-left: 60px;
-        display: flex;
-
-        &--apple {
-          margin-top: 10px;
-        }
+        @include dl_bannar(60px);
       }
     }
   }
@@ -162,23 +160,19 @@ header {
       margin: 0 auto;
 
       &__about {
-        padding: 100px 20px 10px 0;
+        padding: 84px 20px 10px 0;
         color: $bg_font-color;
         h2 {
-          margin-bottom: 10px;
+          margin-bottom: 20px;
           @include bg_text-shadow($size:5px);
         }
         p {
+          margin-bottom: 20px;
           @include bg_text-shadow($size:1px);
         }
       }
       &__dlBannar {
-        padding-left: 20px;
-        display: flex;
-
-        &--apple {
-          margin-top: 10px;
-        }
+        @include dl_bannar;
       }
     }
   }
@@ -302,25 +296,22 @@ aside {
     margin: 0 auto;
 
     &__about {
-      padding-top: 110px;
+      padding-top: 100px;
       padding-bottom: 10px;
       text-align: center;
       color: $bg_font-color;
       h2 {
+        font-size: 35px;
+        line-height: 1.5;
         @include bg_text-shadow($size:5px);
       }
       p {
+        font-size: 24px;
         @include bg_text-shadow($size:1px);
       }
     }
     &__dlBannar {
-      padding-left: 20px;
-      display: flex;
-      justify-content: center;
-
-      &--apple {
-        margin-top: 10px;
-      }
+      @include dl_bannar(auto, auto);
     }
   }
 }

@@ -52,6 +52,13 @@ $footerList_font-size: 12px;
         background-color: $color;
         margin-bottom: 20px;
 }
+@mixin dl_bannar ($sizeL:0, $sizeR:0) {
+  margin-left: $sizeL;
+  margin-right: $sizeR;
+  width: 372px;        
+  display: flex;
+  justify-content: space-between;
+}
 
 /********************
  * FURIMAのデフォルト設定
