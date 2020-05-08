@@ -14,13 +14,13 @@
 |introduction|text|null:false|
 |birthday|string|null:false|
 |telephone|string|null:false|
-|token_id|string|
 
 ### Association
 - has_many :addresses ,dependent: :destroy
 - has_many :comments
 - has_many :items, dependent: :destroy
 - has_many :likes, dependent: :destroy
+- has_many :cards, dependent: :destroy
 
 ## addressesテーブル
 |Column|Type|Options|
@@ -130,3 +130,13 @@ has_many: :items
 - has_many :items , through: :item_tag
 
 
+## cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null:false,unique:true|
+|customer_id|string|null:false|
+|card_id|string|null:false|
+|user_id|references|null: false, foreign_key: true|
+
+### Asociation
+- belongs_to :user
