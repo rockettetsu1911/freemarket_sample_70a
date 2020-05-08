@@ -16,7 +16,7 @@
 |telephone|string|null:false|
 
 ### Association
-- has_many :addresses ,dependent: :destroy
+- has_one :addresses ,dependent: :destroy
 - has_many :comments
 - has_many :items, dependent: :destroy
 - has_many :likes, dependent: :destroy
