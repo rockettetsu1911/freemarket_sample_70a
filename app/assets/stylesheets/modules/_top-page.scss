@@ -219,21 +219,21 @@ header {
         margin: 0 20px;
         max-width: 306px;
 
-        h3 {
-          font-size: 19px;
-        }
-        p {
-          font-size: 17px;
-        }
         &--image {
           max-width: 219.33px;
           width: calc(100% - 40px);
           margin: 0 auto;
           display: block;
         }
+        h3 {
+          font-size: 19px;
+        }
         &--title {
           margin: 38px 0 10px 0;
           text-align: center;
+        }
+        p {
+          font-size: 17px;
         }
         &--text {
           text-align: left;
@@ -260,7 +260,8 @@ header {
       max-width: 780px;
       margin: 0 auto;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
+      flex-direction: row-reverse;
 
       &__itemBox {
         background-color: #fff;
@@ -275,13 +276,17 @@ header {
         &--summary {
           padding: 16px 16px;
           .itemDetails {         
-            &__price {
-              float: left;
+            display:flex;
+            justify-content: space-between;
+
+            &__fav {
+              display: flex;
+              justify-content: end;
+
+              &--mark {
+                margin-right: 5px;
+              }
             }
-            &__star {
-              float: right;
-            }
-            @include clearfix;
           }
           p {
             font-size: $tax_font-size;
