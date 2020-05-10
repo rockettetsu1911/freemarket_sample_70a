@@ -9,20 +9,20 @@
 
   .wrapper__bottom
     %ul
-      -# ToDo カテゴリー機能の実装に使用する
+      -# ToDo カテゴリー機能の実装後に使用する
       -# %li
       -#   = link_to '#', class: 'wrapper__bottom--left', id: 'category-search-btn' do
       -#     カテゴリー
       -# %li
       -#   = link_to '#', class: 'wrapper__bottom--left', id: 'brand-search-btn' do
       -#     ブランド
-      %li
-        = link_to '#', class: 'wrapper__bottom--left', id: 'brand-search-btn' do
+      %li.wrapper__bottom--left
+        = link_to '#', id: 'brand-search-btn' do
           商品一覧
     %ul
-      %li
-        = link_to '#', class: 'wrapper__bottom--right', id: 'login-btn' do
+      %li.wrapper__bottom--right
+        = link_to '#', id: 'login-btn' do
           ログイン
-      %li
-        = link_to '#', class: 'wrapper__bottom--right', id: 'signup-btn' do
+      %li.wrapper__bottom--right
+        = link_to '#', id: 'signup-btn' do
           新規会員登録
