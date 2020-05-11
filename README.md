@@ -16,7 +16,7 @@
 |telephone|string|null:false|
 
 ### Association
-- has_one :addresses ,dependent: :destroy
+- has_one :address ,dependent: :destroy
 - has_many :comments
 - has_many :items, dependent: :destroy
 - has_many :likes, dependent: :destroy
@@ -30,7 +30,7 @@
 |dest_last_name|string|null:false|
 |dest_first_name_kana|string|null:false|
 |dest_last_name_kana|strijng|null:false|
-|zip_code|integer|null:false|
+|zip_code|string|null:false|
 |prefecture|string|null:false|
 |city|string|null:false|
 |block_number|string|null:false|
@@ -49,17 +49,18 @@
 |id|integer|null:false,unique:true|
 |name|string|null:false,index:true| 
 |price|integer|null:false|
-|condition|select|null:false| 
+|condition|integer|null:false| 
 |explanation|text|null:false,index:true| 
 |view_count|integer|integer|null:false|
 |user_id|references |null: false, foreign_key:true|
-|buyer|user_id|
+|buyer|integer|
 |bought_at|datetime|null:false|  
 |category_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
 - has_many :tags ,through: :item_tags, dependent: :destroy
+- has_many :item_tags
 - belongs_to :category
 - has_many :comments, dependent: :destroy
 - has_many :pictures, dependent: :destroy
@@ -109,7 +110,7 @@
 ### Asociation
 has_many: :items
 
-## items_tagsテーブル
+## item_tagsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null:false, unique:true|
@@ -127,7 +128,8 @@ has_many: :items
 |name|string|null:false,unique:true||
 
 ### Asociation
-- has_many :items , through: :item_tag
+- has_many :items , through: :item_tags
+- has_many :item_tags
 
 
 ## cardsテーブル
