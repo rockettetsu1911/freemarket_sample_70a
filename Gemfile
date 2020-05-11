@@ -58,3 +58,4 @@ end
 
 # Use haml for html
 gem 'haml-rails'
+gem 'devise'
