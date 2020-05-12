@@ -31,7 +31,7 @@
 |dest_first_name_kana|string|null:false|
 |dest_last_name_kana|strijng|null:false|
 |zip_code|string|null:false|
-|prefecture|string|null:false|
+|prefecture|integer|null:false|
 |city|string|null:false|
 |block_number|string|null:false|
 |building|string|
