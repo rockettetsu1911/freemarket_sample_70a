@@ -51,10 +51,10 @@
 |price|integer|null:false|
 |condition|integer|null:false| 
 |explanation|text|null:false,index:true| 
-|view_count|integer|integer|null:false|
+|view_count|integer|null:false|
 |user_id|references |null: false, foreign_key:true|
 |buyer|integer|
-|bought_at|datetime|null:false|  
+|bought_at|datetime|  
 |category_id|references|null: false, foreign_key: true|
 
 ### Association
