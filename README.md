@@ -104,7 +104,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null:false,unique:true|       
-|name|string|null:false、unique :true|
+|name|integer|null:false、unique :true|
 
 
 ### Asociation
