@@ -16,4 +16,14 @@ class Item < ApplicationRecord
   validates :condition,   presence: { message: "状態を選択してください" }
   validates :explanation, presence: { message: "商品内容を入力してください" }
 
+  enum condition:{
+    '---':         0,
+    unused:        1, 
+    nearly_unused: 2, 
+    not_injured:   3, 
+    bit_injured:   4, 
+    injured:       5,
+    bad:           6
+  }
+
 end
