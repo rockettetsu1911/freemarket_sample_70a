@@ -8,7 +8,7 @@ class Category < ApplicationRecord
 
   enum name:{
     '---':                 0,
-    radies:                1, 
+    ladies:                1, 
     mens:                  2, 
     baby_and_kids:         3,
     interior:              4, 
