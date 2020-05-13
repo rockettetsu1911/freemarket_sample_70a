@@ -29,13 +29,13 @@ class Address < ApplicationRecord
 
     #東海地方
     nigata: 14, toyama: 15, ishikawa: 16, fukui: 17, yamanashi: 18, nagano:   19,
-    gifu:   20, sizuoka:   21, aichi: 22,
+    gifu:   20, shizuoka:   21, aichi: 22,
 
     #近畿地方
     mie: 23, shiga: 24, kyoto: 25, osaka: 26, hyogo: 27, nara: 28, wakayama: 29,
 
     #中国地方
-    totori: 30, shimane: 31, okayama: 32, hiroshima: 33, yamaguchi: 34,
+    tottori: 30, shimane: 31, okayama: 32, hiroshima: 33, yamaguchi: 34,
 
     #四国地方
     tokushima: 35, kagawa: 36, ehime: 37, kochi: 38,
