@@ -70,3 +70,5 @@ end
 # Use haml for html
 gem 'haml-rails'
 gem 'devise'
+gem 'enum_help'
+gem 'rails-i18n'
