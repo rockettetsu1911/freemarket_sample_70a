@@ -72,3 +72,12 @@ gem 'haml-rails'
 gem 'devise'
 gem 'enum_help'
 gem 'rails-i18n'
+
+group :development, :test do
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
+end
+
