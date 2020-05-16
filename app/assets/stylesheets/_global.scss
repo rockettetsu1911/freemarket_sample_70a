@@ -60,6 +60,28 @@ $footerList_font-size: 12px;
   justify-content: space-between;
 }
 
+@mixin required ($font-size, $line-height) {
+  display: inline-block;
+  background-color: #FF0110;
+  color: #ffffff;
+  font-size: $font-size;
+  margin-left: 5px;
+  padding: 0 3px;
+  border-radius: 2px;
+  line-height: $line-height;
+}
+
+@mixin action-button($width, $bg-color) {
+  line-height: 40px;
+  width: $width;
+  background-color: $bg-color;
+  color: white;
+  text-align: center;
+  margin: 0 auto 80px auto;
+  border: none;
+  display: block;
+}
+
 /********************
  * FURIMAのデフォルト設定
 ********************/
